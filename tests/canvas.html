@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    canvas{
+        border:1px solid black
+    }
+</style>
+<body>
+    <!-- h5 新增 特性 默认宽高 300 * 150  宽高由canvas属性 height 和 width-->
+    <!-- 操作 => 通过js完成 -->
+    <canvas width="800" height="420"></canvas>
+</body>
+</html>
+<script>
+    //canvas 任何操作都由js完成
+    //通过js中的笔完成
+    //获取画布中的笔的上下文
+    let canvas=document.querySelector('canvas')
+    let ctx=canvas.getContext('2d')
+    // console.log(ctx)
+    // //绘制线段
+    // ctx.moveTo(100,100)//绘制线段起点位置的设置
+    // ctx.lineTo(100,200)//其它点设置 可以有多个
+    // ctx.lineTo(200,100)
+    // ctx.fillStyle="red"//填充颜色
+    // ctx.fill()//启用填充颜色
+    // ctx.strokeStyle="purple"//线条颜色
+    // ctx.lineWidth="20"//线条宽度
+    // ctx.closePath()//闭合起点和终点
+    // ctx.stroke()//绘制
+
+
+    //test 绘制矩形(x,y,w,h)
+    //ctx.strokeRect(100,200,100,200)//描边 无法设置颜色
+    // ctx.fillStyle="cyan"
+    // ctx.fill()
+    // ctx.fillRect(100,200,100,200)//填充
+
+    //test 绘制圆形
+    // ctx.beginPath()// 创建路径
+    // //绘制（x,y,r,起始弧度,结束弧度,是否逆时针绘制）
+    // ctx.arc(100,100,50,0,2*Math.PI,true)
+    // //设置填充颜色
+    // ctx.fillStyle='red'
+    // ctx.fill()
+    // //开始绘制
+    // ctx.stroke()
+
+
+    // //清除画布
+    // ctx.fillRect(200,200,100,200)
+    // ctx.fill()
+    // ctx.clearRect(0,0,600,600)//(x,y,w,h) 清除
+    // //绘制文字
+    // //设置文字样式
+    // ctx.font="20px 微软雅黑"
+    // ctx.fillStyle='red'
+    // ctx.fillText("嘻嘻嘻",200,200)//绘制文字 (contend,x,y)
+    
+
+    //test 柱状图
+    ctx.font="16px 微软雅黑"
+    ctx.fillText('数据可视化',50,80)
+
+    ctx.moveTo(100,100)
+    ctx.lineTo(100,400) 
+    ctx.lineTo(700,400)
+
+    ctx.fillText('150',70,110)
+    ctx.fillText('120',70,170)
+    ctx.fillText('90',70,230)
+    ctx.fillText('60',70,290)
+    ctx.fillText('30',70,350)
+    ctx.fillText('0',70,400)
+
+    ctx.moveTo(100,100)
+    ctx.lineTo(700,100) 
+    ctx.moveTo(100,160)
+    ctx.lineTo(700,160) 
+    ctx.moveTo(100,220)
+    ctx.lineTo(700,220) 
+    ctx.moveTo(100,280)
+    ctx.lineTo(700,280) 
+    ctx.moveTo(100,340)
+    ctx.lineTo(700,340)
+
+    ctx.moveTo(250,400)
+    ctx.lineTo(250,410)
+    ctx.moveTo(400,400)
+    ctx.lineTo(400,410)
+    ctx.moveTo(550,400)
+    ctx.lineTo(550,410)
+
+    ctx.fillText('食品',170,415)
+    ctx.fillText('数码',310,415)
+    ctx.fillText('服饰',450,415)
+    ctx.fillText('箱包',600,415)
+
+    ctx.fillStyle='red'
+    ctx.fillRect(120,200,100,200)
+
+    ctx.stroke()
+
+</script>

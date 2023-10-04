@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入echarts依赖包 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding:0;  
+        }
+        div{
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 容器 -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>
+<script>
+    //基于准备好的DOM初始化echarts实例
+    let dom=document.querySelector('div')
+    //创造echarts
+    let mycharts=echarts.init(dom)
+    //指定图表的配置项和数据
+    // mycharts.setOption({
+    //     //图表标题 
+    //     title:{
+    //         //主标题
+    //         text:"数据可视化",
+    //         //子标题
+    //         subtext:'echarts基本使用',
+    //         //主标题颜色
+    //         textStyle:{
+    //             color:'cyan'
+    //         },
+    //         //主标题位置
+    //         left:'center'
+    //     },
+    //     //x y轴 
+    //     xAxis:{
+    //         //数据
+    //         data:['衣服','直播','英语','奥迪']
+    //     },
+    //     yAxis:{
+    //         //显示y轴折线
+    //         axisLine:{
+    //             show:true
+    //         },
+    //         axisTick:{
+    //             show:true
+    //         }
+    //     },
+    //     //系列的配置：图标类型 数据展示
+    //     series:[
+    //         {
+    //             //图标类型
+    //             type:'bar',
+    //             //数据
+    //             data:[10,20,30,40],
+    //             color:'red'
+    //         }
+    //     ]
+
+    // })
+    
+
+    //test
+    let dom1=document.querySelector('.box1')
+    let dom2=document.querySelector('.box2')
+    let mycharts1=echarts.init(dom1)
+    let mycharts2=echarts.init(dom2)
+    mycharts1.setOption({
+        //图表标题 
+        title:{
+            //主标题
+            text:"数据可视化",
+            //子标题
+            subtext:'echarts基本使用',
+            //主标题颜色
+            textStyle:{
+                color:'cyan'
+            },
+            //主标题位置
+            left:'center'
+        },
+        //x y轴 
+        xAxis:{
+            //数据
+            data:['衣服','直播','英语','奥迪']
+        },
+        yAxis:{
+            //显示y轴折线
+            axisLine:{
+                show:true
+            },
+            axisTick:{
+                show:true
+            }
+        },
+        //系列的配置：图标类型 数据展示
+        series:[
+            {
+                //图标类型
+                type:'bar',
+                //数据
+                data:[10,20,30,40],
+                color:'red'
+            }
+        ]
+
+    })
+    mycharts2.setOption({
+        //图表标题 
+        title:{
+            text:'折线图',
+            left:'center',
+            textStyle:{
+                color:'red'
+            },
+            subtext:'echarts基本使用',
+            subtextStyle:{
+                color:'cyan'
+            }
+        },
+        xAxis:{
+            data:['星期一','星期二','星期三','星期四','星期五','星期六','星期日']
+        },
+        yAxis:{},
+        series:[
+            {
+                type:'line',
+                data:[10,20,5,100,40,55,67],
+                color:'anyc'
+            }
+        ]
+    })
+</script>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入echarts依赖包 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding:0;  
+        }
+        div{
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 一个容器 多个图型-->
+    <div></div>
+</body>
+</html>
+<script>
+    //基于准备好的DOM初始化echarts实例
+    let dom=document.querySelector('div')
+    //创造echarts
+    let mycharts=echarts.init(dom)
+    //数据集
+    let data=[
+        ['衣服',10,22,'x',32],
+        ['直播',10,12,'y',45],
+        ['英语',10,10,'z',55],
+        ['奥迪',10,18,'w',66],
+    ]
+    mycharts.setOption({
+        //设置字符集 dataset
+        dataset:{
+            //数据源
+            source:data
+        },
+        //图表标题 
+        title:{
+            //主标题
+            text:"数据可视化",
+            //子标题
+            subtext:'echarts基本使用',
+            //主标题颜色
+            textStyle:{
+                color:'cyan'
+            },
+            //主标题位置
+            left:'center'
+        },
+        //x y轴 
+        xAxis:{
+            //数据
+            data:['衣服','直播','英语','奥迪']
+        },
+        yAxis:{
+            //显示y轴折线
+            axisLine:{
+                show:true
+            },
+            axisTick:{
+                show:true
+            }
+        },
+        //系列的配置：图标类型 数据展示
+        series:[
+            {
+                //图标类型
+                type:'bar',
+                //数据
+                //data:[10,20,30,40],
+                color:'red',
+                //
+                encode:{
+                    y:1
+                }
+            },
+            {
+                type:'line',
+                //data:[10,20,30,40],
+                color:'pink',
+                encode:{
+                    y:2
+                }
+            },
+            {
+                type:'pie',
+                // data:[{
+                //     name:'x',
+                //     value:10
+                // },
+                // {
+                //     name:'y',
+                //     value:20
+                // },
+                // {
+                //     name:'z',
+                //     value:30
+                // },
+                // {
+                //     name:'w',
+                //     value:40
+                // }],
+                width:200,
+                height:150,
+                left:80,
+                top:50,
+                radius:25,
+                encode:{
+                    itemName:3,
+                    value:4 
+                }
+            }
+        ]
+
+    })
+</script>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入echarts依赖包 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding:0;  
+        }
+       .box{
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 容器 -->
+    <div class="box"></div>
+</body>
+</html>
+<script>
+    //基于准备好的DOM初始化echarts实例
+    let dom=document.querySelector('.box')
+    //创造echarts
+    let mycharts=echarts.init(dom)
+    //单坐标系
+    // mycharts.setOption({
+    //    title:{
+    //     text:'一个坐标系'
+    //    },
+    //    xAxis:{
+    //     type:'category'
+    //    },
+    //    yAxis:{},
+    //    series:[
+    //     {
+    //         type:'scatter',
+    //         data:[
+    //             [10,20],
+    //             [20,220],
+    //             [33,10],
+    //             [90,70],
+    //             [40,50]
+    //         ]
+    //     }
+    //    ]
+    // })
+    //双坐标系
+    mycharts.setOption({
+       title:{
+        text:'双坐标系'
+       },
+       xAxis:{
+       data:['直播','游戏','单机','娱乐']
+       },
+       yAxis:[
+        {
+            axisLine:{
+                show:true
+            },
+            axisTick:{
+                show:true
+            }
+        },
+        {
+            axisLine:{
+                show:true
+            },
+            axisTick:{
+                show:true
+            }
+        }
+       ],
+       series:[
+        {
+            type:'line',
+            data:[10,20,30,40],
+            yAxisIndex:0
+        },
+        {
+            type:'bar',
+            data:[20,30,40,50],
+            yAxisIndex:1
+        }
+       ]
+    })
+
+   
+</script>
