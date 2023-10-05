@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #summary
 
 #element-ui (可以二次封装)
@@ -39,3 +40,5 @@
    1.父组件
    2.v-model
    3.compute
+=======
+>>>>>>> d4d5b7c2672ef2e1bc49d332fbbf238ac7f2a380
